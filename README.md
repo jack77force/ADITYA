@@ -1,5 +1,5 @@
 <h2 align="center">
-    ──「 Siddhi ダ ᴍᴜsɪᴄ 」──
+    ──「 𝗕𝗥𝗔𝗡𝗗𝗘𝗗 𓆩🇽𓆪 𝗞𝗜𝗡𝗚 」──
 </h2>
 
 <p align="center">
