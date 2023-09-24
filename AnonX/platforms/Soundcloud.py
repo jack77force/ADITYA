@@ -1,9 +1,8 @@
-import re
 from os import path
 
 from yt_dlp import YoutubeDL
 
-from AnonX.utils.formatters import seconds_to_min
+from AnonXMusic.utils.formatters import seconds_to_min
 
 
 class SoundAPI:
