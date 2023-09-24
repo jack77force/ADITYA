@@ -48,6 +48,7 @@ class Anony(Client):
                 "Please promote your bot as an admin in your log group/channel."
             )
             exit()
+            
         LOGGER(__name__).info(f"Music Bot Started as {self.name}")
 
     async def stop(self):
