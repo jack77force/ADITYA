@@ -1,5 +1,5 @@
 {
-    "name": "Siddhi ダ ᴍᴜsɪᴄ",
+    "name": "BRANDED ダ MUSIC",
     "description": "A Telegram Music Player Bot, written in Python with Pyrogram and Py-Tgcalls.",
     "logo": "https://te.legra.ph/file/b5a457725d59cc7765dde.jpg",
     "keywords": [
@@ -30,11 +30,6 @@
       "MONGO_DB_URI": {
         "description": "Get a mongodb url from https://cloud.mongodb.com.",
         "value": "",
-        "required": true
-      },
-      "MUSIC_BOT_NAME": {
-        "description": "A name for your Music Bot. You can use special characters bot ko jhaat farak ni padega",
-        "value": "ᴀɴᴏɴ ダ ᴍᴜsɪᴄ",
         "required": true
       },
       "OWNER_ID": {
