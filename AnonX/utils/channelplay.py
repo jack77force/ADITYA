@@ -1,5 +1,5 @@
-from AnonX import app
-from AnonX.utils.database import get_cmode
+from AnonXMusic import app
+from AnonXMusic.utils.database import get_cmode
 
 
 async def get_channeplayCB(_, command, CallbackQuery):
@@ -7,19 +7,14 @@ async def get_channeplayCB(_, command, CallbackQuery):
         chat_id = await get_cmode(CallbackQuery.message.chat.id)
         if chat_id is None:
             try:
-                return await CallbackQuery.answer(
-                    _["setting_12"], show_alert=True
-                )
+                return await CallbackQuery.answer(_["setting_7"], show_alert=True)
             except:
                 return
         try:
-            chat = await app.get_chat(chat_id)
-            channel = chat.title
+            channel = (await app.get_chat(chat_id)).title
         except:
             try:
-                return await CallbackQuery.answer(
-                    _["cplay_4"], show_alert=True
-                )
+                return await CallbackQuery.answer(_["cplay_4"], show_alert=True)
             except:
                 return
     else:
