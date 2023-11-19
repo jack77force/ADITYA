@@ -6,22 +6,22 @@ from pyrogram.types import InlineKeyboardMarkup, InputMediaPhoto, Message
 from pytgcalls.exceptions import NoActiveGroupCall
 
 import config
-from AnonXMusic import Apple, Resso, SoundCloud, Spotify, Telegram, YouTube, app
-from AnonXMusic.core.call import Anony
-from AnonXMusic.utils import seconds_to_min, time_to_seconds
-from AnonXMusic.utils.channelplay import get_channeplayCB
-from AnonXMusic.utils.decorators.language import languageCB
-from AnonXMusic.utils.decorators.play import PlayWrapper
-from AnonXMusic.utils.formatters import formats
-from AnonXMusic.utils.inline import (
+from BRANDEDXMUSIC import Apple, Resso, SoundCloud, Spotify, Telegram, YouTube, app
+from BRANDEDXMUSIC.core.call import Anony
+from BRANDEDXMUSIC.utils import seconds_to_min, time_to_seconds
+from BRANDEDXMUSIC.utils.channelplay import get_channeplayCB
+from BRANDEDXMUSIC.utils.decorators.language import languageCB
+from BRANDEDXMUSIC.utils.decorators.play import PlayWrapper
+from BRANDEDXMUSIC.utils.formatters import formats
+from BRANDEDXMUSIC.utils.inline import (
     botplaylist_markup,
     livestream_markup,
     playlist_markup,
     slider_markup,
     track_markup,
 )
-from AnonXMusic.utils.logger import play_logs
-from AnonXMusic.utils.stream.stream import stream
+from BRANDEDXMUSIC.utils.logger import play_logs
+from BRANDEDXMUSIC.utils.stream.stream import stream
 from config import BANNED_USERS, lyrical
 
 
