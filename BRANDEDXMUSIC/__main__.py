@@ -5,11 +5,11 @@ from pyrogram import idle
 from pytgcalls.exceptions import NoActiveGroupCall
 
 import config
-from AnonXMusic import LOGGER, app, userbot
-from AnonXMusic.core.call import Anony
-from AnonXMusic.misc import sudo
-from AnonXMusic.plugins import ALL_MODULES
-from AnonXMusic.utils.database import get_banned_users, get_gbanned
+from BRANDEDXMUSIC import LOGGER, app, userbot
+from BRANDEDXMUSIC.core.call import Anony
+from BRANDEDXMUSIC.misc import sudo
+from BRANDEDXMUSIC.plugins import ALL_MODULES
+from BRANDEDXMUSIC.utils.database import get_banned_users, get_gbanned
 from config import BANNED_USERS
 
 
@@ -35,27 +35,27 @@ async def init():
         pass
     await app.start()
     for all_module in ALL_MODULES:
-        importlib.import_module("AnonXMusic.plugins" + all_module)
-    LOGGER("AnonXMusic.plugins").info("Successfully Imported Modules...")
+        importlib.import_module("BRANDEDXMUSIC.plugins" + all_module)
+    LOGGER("BRANDEDXMUSIC.plugins").info("Successfully Imported Modules...")
     await userbot.start()
     await Anony.start()
     try:
         await Anony.stream_call("https://graph.org/file/e7753627c90e83012848d.mp4")
     except NoActiveGroupCall:
-        LOGGER("AnonXMusic").error(
+        LOGGER("BRANDEDXMUSIC").error(
             "Please turn on the videochat of your log group\channel.\n\nStopping Bot..."
         )
         exit()
     except:
         pass
     await Anony.decorators()
-    LOGGER("AnonXMusic").info(
+    LOGGER("BRANDEDXMUSIC").info(
         "@BRANDED_WORLD"
     )
     await idle()
     await app.stop()
     await userbot.stop()
-    LOGGER("AnonXMusic").info("Stopping AnonX Music Bot...")
+    LOGGER("BRANDEDXMUSIC").info("Stopping BRANSED Music Bot...")
 
 
 if __name__ == "__main__":
