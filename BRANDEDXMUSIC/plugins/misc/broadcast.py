@@ -4,8 +4,8 @@ from pyrogram import filters
 from pyrogram.enums import ChatMembersFilter
 from pyrogram.errors import FloodWait
 
-from AnonXMusic import app
-from AnonXMusic.misc import SUDOERS
+from BRANDEDXMUSIC import app
+from BRANDEDXMUSIC.misc import SUDOERS
 from AnonXMusic.utils.database import (
     get_active_chats,
     get_authuser_names,
@@ -13,8 +13,8 @@ from AnonXMusic.utils.database import (
     get_served_chats,
     get_served_users,
 )
-from AnonXMusic.utils.decorators.language import language
-from AnonXMusic.utils.formatters import alpha_to_int
+from BRANDEDXMUSIC.utils.decorators.language import language
+from BRANDEDXMUSIC.utils.formatters import alpha_to_int
 from config import adminlist
 
 IS_BROADCASTING = False
