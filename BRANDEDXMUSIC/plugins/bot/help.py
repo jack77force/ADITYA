@@ -3,11 +3,11 @@ from typing import Union
 from pyrogram import filters, types
 from pyrogram.types import InlineKeyboardMarkup, Message
 
-from AnonXMusic import app
-from AnonXMusic.utils import help_pannel
-from AnonXMusic.utils.database import get_lang
-from AnonXMusic.utils.decorators.language import LanguageStart, languageCB
-from AnonXMusic.utils.inline.help import help_back_markup, private_help_panel
+from BRANDEDXMUSIC import app
+from BRANDEDXMUSIC.utils import help_pannel
+from BRANDEDXMUSIC.utils.database import get_lang
+from BRANDEDXMUSIC.utils.decorators.language import LanguageStart, languageCB
+from BRANDEDXMUSIC.utils.inline.help import help_back_markup, private_help_panel
 from config import BANNED_USERS, START_IMG_URL, SUPPORT_CHAT
 from strings import get_string, helpers
 
