@@ -5,15 +5,15 @@ from typing import Union
 from pyrogram.types import InlineKeyboardMarkup
 
 import config
-from AnonXMusic import Carbon, YouTube, app
-from AnonXMusic.core.call import Anony
-from AnonXMusic.misc import db
-from AnonXMusic.utils.database import add_active_video_chat, is_active_chat
-from AnonXMusic.utils.exceptions import AssistantErr
-from AnonXMusic.utils.inline import aq_markup, close_markup, stream_markup
-from AnonXMusic.utils.pastebin import AnonyBin
-from AnonXMusic.utils.stream.queue import put_queue, put_queue_index
-from AnonXMusic.utils.thumbnails import get_thumb
+from BRANDEDXMUSIC import Carbon, YouTube, app
+from BRANDEDXMUSIC.core.call import Anony
+from BRANDEDXMUSIC.misc import db
+from BRANDEDXMUSIC.utils.database import add_active_video_chat, is_active_chat
+from BRANDEDXMUSIC.utils.exceptions import AssistantErr
+from BRANDEDXMUSIC.utils.inline import aq_markup, close_markup, stream_markup
+from BRANDEDXMUSIC.utils.pastebin import AnonyBin
+from BRANDEDXMUSIC.utils.stream.queue import put_queue, put_queue_index
+from BRANDEDXMUSIC.utils.thumbnails import get_thumb
 
 
 async def stream(
