@@ -1,5 +1,5 @@
-from AnonXMusic import app
-from AnonXMusic.utils.database import get_cmode
+from BRANDEDXMUSIC import app
+from BRANDEDXMUSIC.utils.database import get_cmode
 
 
 async def get_channeplayCB(_, command, CallbackQuery):
