@@ -1,10 +1,10 @@
 from pyrogram import filters
 from pyrogram.types import InlineKeyboardMarkup, Message
 
-from AnonXMusic import app
-from AnonXMusic.utils.database import get_playmode, get_playtype, is_nonadmin_chat
-from AnonXMusic.utils.decorators import language
-from AnonXMusic.utils.inline.settings import playmode_users_markup
+from BRANDEDXMUSIC import app
+from BRANDEDXMUSIC.utils.database import get_playmode, get_playtype, is_nonadmin_chat
+from BRANDEDXMUSIC.utils.decorators import language
+from BRANDEDXMUSIC.utils.inline.settings import playmode_users_markup
 from config import BANNED_USERS
 
 
