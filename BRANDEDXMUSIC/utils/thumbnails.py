@@ -8,7 +8,7 @@ import numpy as np
 from PIL import Image, ImageChops, ImageDraw, ImageEnhance, ImageFilter, ImageFont
 from youtubesearchpython.__future__ import VideosSearch
 
-from config import app
+from BRANDEDXMUSIC import app
 from BRANDEDXMUSIC import BOT_ID, LOGGER, app
 
 
