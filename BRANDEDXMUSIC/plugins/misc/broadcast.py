@@ -6,7 +6,7 @@ from pyrogram.errors import FloodWait
 
 from BRANDEDXMUSIC import app
 from BRANDEDXMUSIC.misc import SUDOERS
-from AnonXMusic.utils.database import (
+from BRANDEDXMUSIC.utils.database import (
     get_active_chats,
     get_authuser_names,
     get_client,
