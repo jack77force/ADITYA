@@ -9,7 +9,7 @@ from PIL import Image, ImageChops, ImageDraw, ImageEnhance, ImageFilter, ImageFo
 from youtubesearchpython.__future__ import VideosSearch
 
 from BRANDEDXMUSIC import app
-from BRANDEDXMUSIC import BOT_ID, LOGGER, app
+
 
 
 def changeImageSize(maxWidth, maxHeight, image):
