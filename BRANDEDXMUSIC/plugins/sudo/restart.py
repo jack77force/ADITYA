@@ -11,7 +11,7 @@ from pyrogram import filters
 
 import config
 from BRANDEDXMUSIC import app
-from BRANDEDXMJSIC.misc import HAPP, SUDOERS, XCB
+from BRANDEDXMUSIC.misc import HAPP, SUDOERS, XCB
 from BRANDEDXMUSIC.utils.database import (
     get_active_chats,
     remove_active_chat,
