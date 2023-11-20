@@ -5,7 +5,7 @@ from BRANDEDXMUSIC import app
 from BRANDEDXMUSIC.misc import SUDOERS
 from BRANDEDXMUSIC.utils.database import add_gban_user, remove_gban_user
 from BRANDEDXMUSIC.utils.decorators.language import language
-from AnonXMusic.utils.extraction import extract_user
+from BRANDEDXMUSIC.utils.extraction import extract_user
 from config import BANNED_USERS
 
 
