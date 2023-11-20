@@ -1,5 +1,5 @@
 README.md<h2 align="center">
-    ──「 𝗕𝗥𝗔𝗡𝗗𝗘𝗗 𓆩🇽𓆪 𝗞𝗜𝗡𝗚 」──
+    ──「  𝗞𝗜𝗡𝗚 」──
 </h2>
 
 <p align="center">
