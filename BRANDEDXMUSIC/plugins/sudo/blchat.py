@@ -4,7 +4,7 @@ from pyrogram.types import Message
 from BRANDEDXMUSIC import app
 from BRANDEDXMUSIC.misc import SUDOERS
 from BRANDEDXMUSIC.utils.database import blacklist_chat, blacklisted_chats, whitelist_chat
-from AnonXMusic.utils.decorators.language import language
+from BRANDEDXMUSIC.utils.decorators.language import language
 from config import BANNED_USERS
 
 
