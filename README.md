@@ -3,7 +3,7 @@ README.md<h2 align="center">
 </h2>
 
 <p align="center">
-  <img src="https://te.legra.ph/file/b5a457725d59cc7765dde.jpg">
+  <img src="">
 </p>
 
 <p align="center">
@@ -15,7 +15,7 @@ README.md<h2 align="center">
 </p>
 
 <p align="center">
-  <img src="https://te.legra.ph/file/82f1053c956dd6256ff1e.jpg">
+  <img src="">
 </p>
 
 <h3 align="center">
