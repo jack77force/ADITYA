@@ -130,7 +130,7 @@ async def greet_group(_, member: ChatMemberUpdated):
             member.chat.id,
             photo=welcomeimg,
             caption=f"""
-**𝐖𝐄𝐋𝐂𝐎𝐌𝐄 𝐓𝐎 {member.chat.title}
+**Wᴇʟᴄᴏᴍᴇ Tᴏ {member.chat.title}
 ➖➖➖➖➖➖➖➖➖➖➖➖
 𝐍𝐀𝐌𝐄: {message.chat.title}
 ➖➖➖➖➖➖➖➖➖➖➖➖
@@ -163,13 +163,7 @@ async def bot_wel(_, message):
 **NEW GROUP
 ➖➖➖➖➖➖➖➖➖➖➖➖
 𝐍𝐀𝐌𝐄: {message.chat.title}
-➖➖➖➖➖➖➖➖➖➖➖➖
 𝐈𝐃: {message.chat.id}
-➖➖➖➖➖➖➖➖➖➖➖➖
 𝐔𝐒𝐄𝐑𝐍𝐀𝐌𝐄: @{message.chat.username}
-➖➖➖➖➖➖➖➖➖➖➖➖
-𝐃𝐀𝐓𝐄 𝐉𝐎𝐈𝐍𝐄𝐃: {message.chat.date}
-➖➖➖➖➖➖➖➖➖➖➖➖
-𝐉𝐎𝐈𝐍𝐓 𝐓𝐈𝐌𝐄: {message.chat.time}
 ➖➖➖➖➖➖➖➖➖➖➖➖**
 """)
