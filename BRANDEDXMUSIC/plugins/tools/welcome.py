@@ -135,8 +135,6 @@ async def greet_group(_, member: ChatMemberUpdated):
 𝐍𝐀𝐌𝐄: {message.chat.title}
 𝐈𝐃: {message.chat.id}
 𝐔𝐒𝐄𝐑𝐍𝐀𝐌𝐄: @{message.chat.username}
-𝐃𝐀𝐓𝐄 𝐉𝐎𝐈𝐍𝐄𝐃: {message.chat.date}
-𝐉𝐎𝐈𝐍𝐓 𝐓𝐈𝐌𝐄: {message.chat.time}
 ➖➖➖➖➖➖➖➖➖➖➖➖**
 """,
             reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton(f"⦿ ᴀᴅᴅ ᴍᴇ ⦿", url=f"https://t.me/Aditya_Zip_bot?startgroup=true")]])
