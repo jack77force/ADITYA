@@ -36,12 +36,12 @@ class temp:
 
 # ... (FUCK you randi ke bacvhhe )
 
-def circle(pfp, size=(500, 500)):
+def circle(pfp, size=(400, 400)):
     pfp = pfp.resize(size, Image.ANTIALIAS).convert("RGBA")
     bigsize = (pfp.size[0] * 3, pfp.size[1] * 3)
     mask = Image.new("L", bigsize, 0)
     draw = ImageDraw.Draw(mask)
-    draw.ellipse((0, 0) + bigsize, fill=255)
+    draw.ellipse((0, 0) + bigsize, fill=155)
     mask = mask.resize(pfp.size, Image.ANTIALIAS)
     mask = ImageChops.darker(mask, pfp.split()[-1])
     pfp.putalpha(mask)
@@ -51,15 +51,15 @@ def welcomepic(pic, user, chat, id, uname):
     background = Image.open("BRANDEDXMUSIC/assets/bg2.jpg")
     pfp = Image.open(pic).convert("RGBA")
     pfp = circle(pfp)
-    pfp = pfp.resize((450, 450))
+    pfp = pfp.resize((350, 350))
     draw = ImageDraw.Draw(background)
     font = ImageFont.truetype('BRANDEDXMUSIC/assets/font.ttf', size=40)
     welcome_font = ImageFont.truetype('BRANDEDXMUSIC/assets/font.ttf', size=60)
-    draw.text((30, 300), f'NAME: {user}', fill=(255, 255, 255), font=font)
-    draw.text((30, 370), f'ID: {id}', fill=(255, 255, 255), font=font)
-    draw.text((30, 40), f"{chat}", fill=(225, 225, 225), font=welcome_font)
-    draw.text((30, 430), f"USERNAME : {uname}", fill=(255, 255, 255), font=font)
-    pfp_position = (671, 134)
+    draw.text((30, 200), f'NAME: {user}', fill=(155, 155, 155), font=font)
+    draw.text((30, 270), f'ID: {id}', fill=(155, 155, 155), font=font)
+    draw.text((30, 40), f"{chat}", fill=(125, 125, 125), font=welcome_font)
+    draw.text((30, 330), f"USERNAME : {uname}", fill=(155, 155, 155), font=font)
+    pfp_position = (571, 134)
     background.paste(pfp, pfp_position, pfp)
     background.save(f"downloads/welcome#{id}.png")
     return f"downloads/welcome#{id}.png"
