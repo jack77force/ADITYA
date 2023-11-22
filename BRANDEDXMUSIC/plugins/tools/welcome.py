@@ -132,9 +132,9 @@ async def greet_group(_, member: ChatMemberUpdated):
             caption=f"""
 **Wᴇʟᴄᴏᴍᴇ Tᴏ {member.chat.title}
 ➖➖➖➖➖➖➖➖➖➖➖➖
-𝐍𝐀𝐌𝐄: {message.chat.title}
-𝐈𝐃: {message.chat.id}
-𝐔𝐒𝐄𝐑𝐍𝐀𝐌𝐄: @{message.chat.username}
+Nᴀᴍᴇ ✧ {user.mention}
+Iᴅ ✧ {user.id}
+Usᴇʀɴᴀᴍᴇ ✧ @{user.username}
 ➖➖➖➖➖➖➖➖➖➖➖➖**
 """,
             reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton(f"⦿ ᴀᴅᴅ ᴍᴇ ⦿", url=f"https://t.me/Aditya_Zip_bot?startgroup=true")]])
@@ -156,8 +156,8 @@ async def bot_wel(_, message):
             await app.send_message(LOG_CHANNEL_ID, f"""
 **NEW GROUP
 ➖➖➖➖➖➖➖➖➖➖➖➖
-𝐍𝐀𝐌𝐄: {message.chat.title}
-𝐈𝐃: {message.chat.id}
-𝐔𝐒𝐄𝐑𝐍𝐀𝐌𝐄: @{message.chat.username}
+NAME: {message.chat.title}
+ID: {message.chat.id}
+USERNAME: @{message.chat.username}
 ➖➖➖➖➖➖➖➖➖➖➖➖**
 """)
