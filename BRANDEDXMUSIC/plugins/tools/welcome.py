@@ -133,7 +133,9 @@ async def greet_group(_, member: ChatMemberUpdated):
 **Wᴇʟᴄᴏᴍᴇ Tᴏ {member.chat.title}
 ➖➖➖➖➖➖➖➖➖➖➖➖
 Nᴀᴍᴇ ✧ {user.mention}
+➖➖➖➖➖➖➖➖➖➖➖➖
 Iᴅ ✧ {user.id}
+➖➖➖➖➖➖➖➖➖➖➖➖
 Usᴇʀɴᴀᴍᴇ ✧ @{user.username}
 ➖➖➖➖➖➖➖➖➖➖➖➖**
 """,
@@ -156,8 +158,14 @@ async def bot_wel(_, message):
             await app.send_message(LOG_CHANNEL_ID, f"""
 **NEW GROUP
 ➖➖➖➖➖➖➖➖➖➖➖➖
-NAME: {message.chat.title}
-ID: {message.chat.id}
-USERNAME: @{message.chat.username}
+𝐍𝐀𝐌𝐄: {message.chat.title}
+➖➖➖➖➖➖➖➖➖➖➖➖
+𝐈𝐃: {message.chat.id}
+➖➖➖➖➖➖➖➖➖➖➖➖
+𝐔𝐒𝐄𝐑𝐍𝐀𝐌𝐄: @{message.chat.username}
+➖➖➖➖➖➖➖➖➖➖➖➖
+𝐃𝐀𝐓𝐄 𝐉𝐎𝐈𝐍𝐄𝐃: {message.chat.date}
+➖➖➖➖➖➖➖➖➖➖➖➖
+𝐉𝐎𝐈𝐍𝐓 𝐓𝐈𝐌𝐄: {message.chat.time}
 ➖➖➖➖➖➖➖➖➖➖➖➖**
 """)
