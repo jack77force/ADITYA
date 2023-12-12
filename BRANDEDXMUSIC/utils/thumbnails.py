@@ -1,14 +1,13 @@
 import os
 import re
+
 import aiofiles
 import aiohttp
-from MusicXBharat.assets import boobs
-import numpy as np
 from PIL import Image, ImageDraw, ImageEnhance, ImageFilter, ImageFont
 from unidecode import unidecode
 from youtubesearchpython.__future__ import VideosSearch
 
-from MusicXBharat import app
+from BRANDEDXMUSIC import app
 from config import YOUTUBE_IMG_URL
 
 
@@ -85,7 +84,7 @@ async def get_thumb(videoid,user_id):
         xp=Image.open(sp)
 
         youtube = Image.open(f"cache/thumb{videoid}.png")
-        bg = Image.open(f"MusicXBharat/assets/Champu.png")
+        bg = Image.open(f"BRANDEDXMUSIC/assets/Champu.png")
         image1 = changeImageSize(1280, 720, youtube)
         image2 = image1.convert("RGBA")
         background = image2.filter(filter=ImageFilter.BoxBlur(20))
@@ -99,8 +98,8 @@ async def get_thumb(videoid,user_id):
         a=changeImageSize(200,200,circle(xp)) 
         background.paste(a,(1050,194),mask=a)
         draw = ImageDraw.Draw(background)
-        arial = ImageFont.truetype("MusicXBharat/assets/font2.ttf", 30)
-        font = ImageFont.truetype("MusicXBharat/assets/font.ttf", 30)
+        arial = ImageFont.truetype("BRANDEDXMUSIC/assets/font2.ttf", 30)
+        font = ImageFont.truetype("BRANDEDXMUSIC/assets/font.ttf", 30)
         draw.text((1110, 8), unidecode(app.name), fill="white", font=arial)
         draw.text(
                 (55, 560),
