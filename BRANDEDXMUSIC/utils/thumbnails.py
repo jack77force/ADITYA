@@ -39,10 +39,11 @@ def clear(text):
     return title.strip()
 
 
-async def get_thumb(videoid):
-    if os.path.isfile(f"cache/{videoid}.png"):
-        return f"cache/{videoid}.png"
+async def get_thumb(videoid,user_id):
+    if os.path.isfile(f"cache/{videoid}_{user_id}.png"):
+        return f"cache/{videoid}_{user_id}.png"
 
+    fuck = random.choice(boobs)
     url = f"https://www.youtube.com/watch?v={videoid}"
     try:
         results = VideosSearch(url, limit=1)
@@ -73,13 +74,29 @@ async def get_thumb(videoid):
                     f = await aiofiles.open(f"cache/thumb{videoid}.png", mode="wb")
                     await f.write(await resp.read())
                     await f.close()
+        try:
+            async for photo in app.get_chat_photos(user_id,1):
+                sp=await app.download_media(photo.file_id, file_name=f'{user_id}.jpg')
+        except:
+            async for photo in app.get_chat_photos(app.id,1):
+                sp=await app.download_media(photo.file_id, file_name=f'{app.id}.jpg')  
+                
+        xp=Image.open(sp)
 
         youtube = Image.open(f"cache/thumb{videoid}.png")
+        bg = Image.open(f"BRANDEDXMUSIC/assets/Champu.png")
         image1 = changeImageSize(1280, 720, youtube)
         image2 = image1.convert("RGBA")
-        background = image2.filter(filter=ImageFilter.BoxBlur(10))
+        background = image2.filter(filter=ImageFilter.BoxBlur(20))
+        image5 = changeImageSize(1280, 720, bg)
+        image5 = image5.convert("RGBA")
+        background.paste(image5, (0, 0), image5)
         enhancer = ImageEnhance.Brightness(background)
-        background = enhancer.enhance(0.5)
+        background = enhancer.enhance(0.9)
+        y=changeImageSize(200,200,circle(youtube)) 
+        background.paste(y,(40,194),mask=y)
+        a=changeImageSize(200,200,circle(xp)) 
+        background.paste(a,(1050,194),mask=a)
         draw = ImageDraw.Draw(background)
         arial = ImageFont.truetype("BRANDEDXMUSIC/assets/font2.ttf", 30)
         font = ImageFont.truetype("BRANDEDXMUSIC/assets/font.ttf", 30)
