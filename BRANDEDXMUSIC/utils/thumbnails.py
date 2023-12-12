@@ -1,15 +1,8 @@
 import os
-import re
-import textwrap
-
-import aiofiles
 import aiohttp
-from PIL import (Image, ImageDraw, ImageEnhance, ImageFilter,
-                 ImageFont, ImageOps)
-from youtubesearchpython.__future__ import VideosSearch
+import aiofiles
 
-from config import MUSIC_BOT_NAME, YOUTUBE_IMG_URL
-
+from config import YOUTUBE_IMG_URL
 
 def changeImageSize(maxWidth, maxHeight, image):
     widthRatio = maxWidth / image.size[0]
