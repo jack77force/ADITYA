@@ -10,7 +10,6 @@ from youtubesearchpython.__future__ import VideosSearch
 from BRANDEDXMUSIC import app
 from config import YOUTUBE_IMG_URL
 
-
 def changeImageSize(maxWidth, maxHeight, image):
     widthRatio = maxWidth / image.size[0]
     heightRatio = maxHeight / image.size[1]
@@ -19,31 +18,20 @@ def changeImageSize(maxWidth, maxHeight, image):
     newImage = image.resize((newWidth, newHeight))
     return newImage
 
-def circle(img): 
-     h,w=img.size 
-     a = Image.new('L', [h,w], 0) 
-     b = ImageDraw.Draw(a) 
-     b.pieslice([(0, 0), (h,w)], 0, 360, fill = 255,outline = "white") 
-     c = np.array(img) 
-     d = np.array(a) 
-     e = np.dstack((c, d)) 
-     return Image.fromarray(e)
-
 
 def clear(text):
-    list = text.split(" ")
+    words = text.split(" ")
     title = ""
-    for i in list:
-        if len(title) + len(i) < 60:
-            title += " " + i
+    for word in words:
+        if len(title) + len(word) < 60:
+            title += " " + word
     return title.strip()
 
 
-async def get_thumb(videoid,user_id):
-    if os.path.isfile(f"cache/{videoid}_{user_id}.png"):
-        return f"cache/{videoid}_{user_id}.png"
+async def get_thumb(videoid):
+    if os.path.isfile(f"cache/{videoid}.png"):
+        return f"cache/{videoid}.png"
 
-    fuck = random.choice(boobs)
     url = f"https://www.youtube.com/watch?v={videoid}"
     try:
         results = VideosSearch(url, limit=1)
@@ -74,68 +62,100 @@ async def get_thumb(videoid,user_id):
                     f = await aiofiles.open(f"cache/thumb{videoid}.png", mode="wb")
                     await f.write(await resp.read())
                     await f.close()
-        try:
-            async for photo in app.get_chat_photos(user_id,1):
-                sp=await app.download_media(photo.file_id, file_name=f'{user_id}.jpg')
-        except:
-            async for photo in app.get_chat_photos(app.id,1):
-                sp=await app.download_media(photo.file_id, file_name=f'{app.id}.jpg')  
-                
-        xp=Image.open(sp)
 
         youtube = Image.open(f"cache/thumb{videoid}.png")
-        bg = Image.open(f"BRANDEDXMUSIC/assets/Champu.png")
         image1 = changeImageSize(1280, 720, youtube)
         image2 = image1.convert("RGBA")
-        background = image2.filter(filter=ImageFilter.BoxBlur(20))
-        image5 = changeImageSize(1280, 720, bg)
-        image5 = image5.convert("RGBA")
-        background.paste(image5, (0, 0), image5)
-        enhancer = ImageEnhance.Brightness(background)
-        background = enhancer.enhance(0.9)
-        y=changeImageSize(200,200,circle(youtube)) 
-        background.paste(y,(40,194),mask=y)
-        a=changeImageSize(200,200,circle(xp)) 
-        background.paste(a,(1050,194),mask=a)
+        
+        # Check if the 'filter' attribute is available in the Image module
+        if hasattr(Image, 'filter'):
+            background = image2.filter(filter=ImageFilter.BoxBlur(50))
+            enhancer = ImageEnhance.Brightness(background)
+            background = enhancer.enhance(0.9)
+        else:
+            # If 'filter' attribute is not available, use a different approach for blurring
+            background = image2.filter(ImageFilter.BoxBlur(50))
+            enhancer = ImageEnhance.Brightness(background)
+            background = enhancer.enhance(0.9)
+        
+        Xcenter = youtube.width / 2
+        Ycenter = youtube.height / 2
+        x1 = Xcenter - 250
+        y1 = Ycenter - 250
+        x2 = Xcenter + 250
+        y2 = Ycenter + 250
+        logo = youtube.crop((x1, y1, x2, y2))
+        logo.thumbnail((520, 520), Image.ANTIALIAS)
+        logo = ImageOps.expand(logo, border=17, fill="pink")
+        background.paste(logo, (50, 100))
         draw = ImageDraw.Draw(background)
+        
+        # Adjust the font size here
+        font_size = 40
+        font = ImageFont.truetype("BRANDEDXMUSIC/assets/font2.ttf", font_size)
+        font2_size = 70
+        font2 = ImageFont.truetype("BRANDEDXMUSIC/assets/font2.ttf", font2_size)
         arial = ImageFont.truetype("BRANDEDXMUSIC/assets/font2.ttf", 30)
-        font = ImageFont.truetype("BRANDEDXMUSIC/assets/font.ttf", 30)
-        draw.text((1110, 8), unidecode(app.name), fill="white", font=arial)
+        name_font = ImageFont.truetype("BRANDEDXMUSIC/assets/font.ttf", 40)
+        
+        para = textwrap.wrap(clear(title), width=32) 
+        j = 0
         draw.text(
-            (55, 560),
-            f"{channel} | {views[:23]}",
-            (255, 255, 255),
-            font=arial,
+            (6, 6), f"{BOT_NAME}", fill="Yellow", font=name_font
         )
         draw.text(
-            (57, 600),
-            clear(title),
-            (255, 255, 255),
+            (600, 200),
+            f"NOW PLAYING",
+            fill="white",
+            stroke_width=2,
+            stroke_fill="yellow",
+            font=font2,
+        )
+        for line in para:
+            if j == 1:
+                j += 1
+                draw.text(
+                    (600, 390),
+                    f"Tɪᴛʟᴇ : {line}",
+                    fill="white",
+                    stroke_width=1,
+                    stroke_fill="white",
+                    font=font,
+                )
+            if j == 0:
+                j += 1
+                draw.text(
+                    (600, 330),
+                    f"{line}",
+                    fill="white",
+                    stroke_width=1,
+                    stroke_fill="white",
+                    font=font,
+                )
+
+        draw.text(
+            (600, 450),
+            f"Views : {views[:23]}",
+            fill="white",
+            stroke_width=1,
+            stroke_fill="white",
             font=font,
         )
-        draw.line(
-            [(55, 660), (1220, 660)],
+        draw.text(
+            (600, 500),
+            f"Duration : {duration[:23]} Mins",
             fill="white",
-            width=5,
-            joint="curve",
-        )
-        draw.ellipse(
-            [(918, 648), (942, 672)],
-            outline="white",
-            fill="white",
-            width=15,
+            stroke_width=1,
+            stroke_fill="white",
+            font=font,
         )
         draw.text(
-            (36, 685),
-            "00:00",
-            (255, 255, 255),
-            font=arial,
-        )
-        draw.text(
-            (1185, 685),
-            f"{duration[:23]}",
-            (255, 255, 255),
-            font=arial,
+            (600, 550),
+            f"Channel : {channel}",
+            fill="white",
+            stroke_width=1,
+            stroke_fill="white",
+            font=font,
         )
         try:
             os.remove(f"cache/thumb{videoid}.png")
