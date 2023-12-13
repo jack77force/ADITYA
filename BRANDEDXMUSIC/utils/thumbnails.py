@@ -8,7 +8,7 @@ from unidecode import unidecode
 from youtubesearchpython.__future__ import VideosSearch
 
 from BRANDEDXMUSIC import app
-from config import YOUTUBE_IMG_UR
+from config import YOUTUBE_IMG_URL
 
 
 def changeImageSize(maxWidth, maxHeight, image):
